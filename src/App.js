@@ -3,26 +3,26 @@ import './App.css';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Checkout from './Components/Checkout/Checkout';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
 
         <Switch>
 
           <Route path='/checkout'>
-            <h1>Checkout</h1>
+            <Checkout />
           </Route>
 
           {/* Make sure the Default route is on the bottom */}
           <Route path='/'>
-            <Header />
             <Home />
           </Route>
 
         </Switch>
-
       </div>
     </Router>
   );
