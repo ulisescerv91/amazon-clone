@@ -2,9 +2,16 @@ import React from 'react'
 import './Header.css'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { useStateValue } from '../../StateProvider'
+
 import { Link } from 'react-router-dom'
 
 export default function Header() {
+    /**
+       * IMPLEMENT REACT CONTEXT
+       * Step 4: - Get the values of basket    
+       */
+    const [{ basket }, dispatch] = useStateValue();// Here we have access to the basket from the dataLayer of app
     return (
         <div className='header'>
             <Link to=''>
@@ -35,7 +42,7 @@ export default function Header() {
                 <Link to='checkout'>
                     <div className="header__nav__basket">
                         <ShoppingBasketIcon />
-                        <span className="header__nav__basket___lineTwo header__nav__basket__count">0</span>
+                        <span className="header__nav__basket___lineTwo header__nav__basket__count">{basket?.length}</span>
                     </div>
                 </Link>
             </div>
