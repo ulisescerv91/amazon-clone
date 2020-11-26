@@ -1,6 +1,7 @@
 import React from 'react'
 import './Product.css'
 import { useStateValue } from '../../StateProvider'
+import Stars from '../Stars/Stars';
 export default function Product({ id, title, image, price, rating }) {
 
     const [{ basket }, dispatch] = useStateValue();//dispatch - how manipulate the data
@@ -33,16 +34,7 @@ export default function Product({ id, title, image, price, rating }) {
                     <strong>{price}</strong>
                 </p>
                 <div className="product__info__rating">
-                    {
-                        Array(rating)
-                            .fill()
-                            .map((_, i) => (
-                                <span key={i}>⭐</span>
-                            )
-                            )
-                    }
-
-
+                    <Stars numberStars={rating} />
                 </div>
             </div>
             <img
