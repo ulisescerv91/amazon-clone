@@ -27,10 +27,12 @@ export default function Header() {
             </div>
 
             <div className="header__nav">
-                <div className="header__nav__option">
-                    <span className="header__nav__option___lineOne">Hello</span>
-                    <strong className="header__nav__option___lineTwo">Sing In</strong>
-                </div>
+                <Link to="/login">
+                    <div className="header__nav__option">
+                        <span className="header__nav__option___lineOne">Hello</span>
+                        <strong className="header__nav__option___lineTwo">Sing In</strong>
+                    </div>
+                </Link>
                 <div className="header__nav__option">
                     <span className="header__nav__option___lineOne">Return</span>
                     <strong className="header__nav__option___lineTwo"> Orders</strong>
